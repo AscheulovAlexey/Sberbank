@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c2d8411-95b7-4aa6-865f-36dcfea916ad" name="Default Changelist" comment="" />
+    <list default="true" id="8c2d8411-95b7-4aa6-865f-36dcfea916ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sberbank/task3/DownloadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sberbank/task3/DownloadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sberbank/task3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sberbank/task3/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sberbank/task3/DownloadService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sberbank/task3/DownloadService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sberbank/task3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sberbank/task3/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sberbank/task3/SpeedService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sberbank/task3/SpeedService.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +24,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -23,7 +35,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1ad2aumaSLFs04Bqkbw5PMkiAru" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -46,6 +60,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sberbank.task3.Main" />
       <module name="sberbank" />
+      <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/Downloads/links.txt $USER_HOME$/Downloads/javaapp/" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.sberbank.task3.*" />
@@ -72,11 +87,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587051216146</updated>
-      <workItem from="1587051220577" duration="26209000" />
+      <workItem from="1587051220577" duration="34215000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

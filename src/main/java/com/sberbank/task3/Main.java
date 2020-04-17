@@ -19,6 +19,11 @@ public class Main {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
+        if (args.length != 2) {
+            throw new IllegalArgumentException("Необходимо добавить 2 аргумента в метод Main: " +
+                    "1 - путь к файлу со ссылками, 2 - путь к папке, где будут сохраняться файлы");
+        }
+
         System.out.println("Требуемое количество потоков (1 поток - 1 файл) для скачивания. Например, 1,2,3...n\n" +
                 "Введите число: ");
         Scanner scanner = new Scanner(System.in);
@@ -31,13 +36,15 @@ public class Main {
         System.out.println("\nСкачивание началось...\n");
 
         ReadTextFileService readTextFileService = new ReadTextFileService();
-        List<String> links = readTextFileService.readTextFile("/Users/ascheulov/Downloads/links.txt");
-        String toPath = "/Users/ascheulov/Downloads/javaapp/";
+        //List<String> links = readTextFileService.readTextFile("/Users/ascheulov/Downloads/links.txt");
+        List<String> links = readTextFileService.readTextFile(args[0]);
+        //String toPath = "/Users/ascheulov/Downloads/javaapp/";
 
         long startTime = System.nanoTime();
 
         ExecutorService executor = Executors.newFixedThreadPool(numberOfThreads);
-        links.forEach(link -> executor.submit(new DownloadService(link, toPath)));
+        //links.forEach(link -> executor.submit(new DownloadService(link, toPath)));
+        links.forEach(link -> executor.submit(new DownloadService(link, args[1])));
         executor.shutdown();
 
         while (executor.isTerminated() == false) {
