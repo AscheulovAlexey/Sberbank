@@ -16,7 +16,7 @@ public class ReadTextFileService {
         File textWithLinks = new File(pathToFile);
         FileReader readerTextFile = new FileReader(textWithLinks);
         BufferedReader bufferedReaderTextFile = new BufferedReader(readerTextFile);
-
+        
         String line = null;
         while ((line = bufferedReaderTextFile.readLine()) != null) {
             links.add(line);

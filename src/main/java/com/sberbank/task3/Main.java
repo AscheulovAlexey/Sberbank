@@ -29,21 +29,17 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int numberOfThreads = scanner.nextInt();
 
-        System.out.println("\nВведите ограничение скорости скачивания. Например, 512 = 512кб/с.\n" +
+        System.out.println("\nТребуемое ограничение скорости скачивания. Например, 512 = 512кб/с.\n" +
                 "Введите число: ");
         GlobalVariables.globalRateLimiter = RateLimiter.create(scanner.nextInt() * 1024);
 
         System.out.println("\nСкачивание началось...\n");
 
         ReadTextFileService readTextFileService = new ReadTextFileService();
-        //List<String> links = readTextFileService.readTextFile("/Users/ascheulov/Downloads/links.txt");
         List<String> links = readTextFileService.readTextFile(args[0]);
-        //String toPath = "/Users/ascheulov/Downloads/javaapp/";
 
         long startTime = System.nanoTime();
-
         ExecutorService executor = Executors.newFixedThreadPool(numberOfThreads);
-        //links.forEach(link -> executor.submit(new DownloadService(link, toPath)));
         links.forEach(link -> executor.submit(new DownloadService(link, args[1])));
         executor.shutdown();
 
@@ -53,7 +49,6 @@ public class Main {
         long endTime = System.nanoTime();
 
         SpeedService.measureSpeedDownloadAllThread(startTime, endTime);
-
 
     }
 }
