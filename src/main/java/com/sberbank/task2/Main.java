@@ -19,11 +19,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String inputString = "Сапог саРай арбуз болт БоКс биржа лалала лол мапа кто арара бум серый";
+        String inputString = "Сапог саРай арбуз болт БоКс биржа с лалала проверка море кто арка а б бум серьга";
         System.out.println("Входная строка:\n" + inputString);
 
-        SortStringService sortStringService = new SortStringService();
-        Map<String, List<String>> dictionary = sortStringService.transformStringToSortedMap(inputString);
+        Map<String, List<String>> dictionary = SortStringService.transformStringToSortedMap(inputString);
         System.out.println("\nОтсортированная строка:\n" + dictionary);
     }
 

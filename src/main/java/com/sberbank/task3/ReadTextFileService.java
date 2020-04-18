@@ -9,15 +9,14 @@ import java.util.List;
 
 public class ReadTextFileService {
 
-    private List<String> links = new ArrayList<>();
+    public static List<String> readTextFile(String pathToFile) throws IOException {
 
-    public List<String> readTextFile(String pathToFile) throws IOException {
-
+        List<String> links = new ArrayList<>();
         File textWithLinks = new File(pathToFile);
         FileReader readerTextFile = new FileReader(textWithLinks);
         BufferedReader bufferedReaderTextFile = new BufferedReader(readerTextFile);
         
-        String line = null;
+        String line;
         while ((line = bufferedReaderTextFile.readLine()) != null) {
             links.add(line);
         }

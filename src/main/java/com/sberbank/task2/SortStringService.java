@@ -5,11 +5,10 @@ import java.util.stream.Collectors;
 
 public class SortStringService {
 
-    private Map<String, List<String>> dictionary = new TreeMap<>();
-
-    public Map<String, List<String>> transformStringToSortedMap(String stringToMap) {
+    public static Map<String, List<String>> transformStringToSortedMap(String stringToMap) {
 
         List<String> stringToWords = Arrays.asList(stringToMap.split(" "));
+        Map<String, List<String>> dictionary = new TreeMap<>();
 
         stringToWords.
                 stream().
@@ -24,6 +23,7 @@ public class SortStringService {
                         dictionary.put(k,v);
                     }
                 });
+
         return dictionary;
     }
 
