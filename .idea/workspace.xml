@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c2d8411-95b7-4aa6-865f-36dcfea916ad" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sberbank/task3/DownloadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sberbank/task3/DownloadService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sberbank/task3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sberbank/task3/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sberbank/task3/ReadTextFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sberbank/task3/ReadTextFileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sberbank/task3/DownloadService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sberbank/task3/DownloadService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sberbank/task3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sberbank/task3/Main.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587051216146</updated>
-      <workItem from="1587051220577" duration="35133000" />
+      <workItem from="1587051220577" duration="35459000" />
     </task>
     <servers />
   </component>
