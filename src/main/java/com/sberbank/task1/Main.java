@@ -2,6 +2,10 @@ package com.sberbank.task1;
 
 import java.util.Random;
 
+/*
+Напишите программу для сортировки массива, использующую метод пузырька
+*/
+
 public class Main {
 
     public static void main(String[] args) {
