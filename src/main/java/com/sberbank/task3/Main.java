@@ -20,27 +20,47 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         if (args.length != 2) {
             throw new IllegalArgumentException("Необходимо добавить 2 аргумента в метод Main: " +
                     "1 - путь к файлу со ссылками, 2 - путь к папке, где будут сохраняться файлы");
         }
 
+        List<String> links = null;
+        try {
+            links = ReadTextFileService.readTextFile(args[0]);
+        } catch (IOException | NullPointerException e) {
+            throw new ReadServiceException("Файл не найден или ошибка при чтении файла.");
+        }
+
         System.out.println("Требуемое количество потоков (1 поток - 1 файл) для скачивания. Например, 1,2,3...n\n" +
                 "Введите число: ");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int numberOfThreads = Integer.parseInt(reader.readLine());
+        int numberOfThreads = 0;
+        while(true) {
+            try {
+                numberOfThreads = Integer.parseInt(reader.readLine());
+                break;
+            } catch(IOException | NumberFormatException e) {
+                System.out.println("Ошибка при вводе числа. Введите число повторно.");
+            }
+        }
 
         System.out.println("\nТребуемое ограничение скорости скачивания. Например, 512 = 512кб/с.\n" +
                 "Введите число: ");
-        int limitSpeed = Integer.parseInt(reader.readLine());
+        int limitSpeed = 0;
+        while(true) {
+            try {
+                limitSpeed = Integer.parseInt(reader.readLine());
+                break;
+            } catch(IOException | NumberFormatException e) {
+                System.out.println("Ошибка при вводе числа. Введите число повторно.");
+            }
+        }
         GlobalVariables.globalRateLimiter = RateLimiter.create(limitSpeed * 1024);
 
         System.out.println("\nСкачивание началось...\n");
-
-        List<String> links = ReadTextFileService.readTextFile(args[0]);
-
         long startTime = System.nanoTime();
         ExecutorService executor = Executors.newFixedThreadPool(numberOfThreads);
         links.forEach(link -> executor.submit(new DownloadService(link, args[1])));
@@ -51,7 +71,7 @@ public class Main {
                 executor.awaitTermination(10, TimeUnit.SECONDS);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
-                throw new AssertionError(e);
+                throw new DownloadServiceException("Ошибка во время завершения работы потока");
             }
         }
         long endTime = System.nanoTime();

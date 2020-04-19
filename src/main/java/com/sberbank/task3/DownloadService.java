@@ -33,17 +33,19 @@ public class DownloadService implements Runnable {
 
     @Override
     public void run() {
+        threadName = Thread.currentThread().getName();
         try {
-            threadName = Thread.currentThread().getName();
             downloadFileFromURL(fromURL, toPath);
-        } catch (IOException | TikaException e) {
-            System.out.println("Ошибка при скачивании файла");
+        } catch (Exception e) {
+            Thread.currentThread().interrupt();
+            System.err.println("Ошибка при скачивании файла. Поток: " + threadName + "\n");
         }
     }
 
     public void downloadFileFromURL(String fromURL, String pathToDirectory) throws IOException, TikaException {
         System.out.println("Начал скачивать файл. Поток: " + threadName + "\nСсылка: " + fromURL + "\n");
-        URL url = new URL(fromURL);
+        URL url = null;
+        url = new URL(fromURL);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         BufferedInputStream bis = new BufferedInputStream(connection.getInputStream());
 
